@@ -21,8 +21,8 @@ const Navbar = () => {
       </div>
       <div className="Navbar-right">
         <img src={searchIcon} alt="" className='icons' />
-        <p>Childern</p>
-        
+        <p>Childern </p>
+
         <img src={searchIcon} alt="" className='icons' />
       </div>
     </div>
