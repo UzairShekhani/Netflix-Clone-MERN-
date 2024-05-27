@@ -6,7 +6,7 @@ const TittleCards = () => {
   return (
     <div className='titlecards'>
       <h2>Popular On Netflix</h2>
-      <div className="card-list">
+      <div className="card-list" ref={cardsRef}>
         {cards_data.map((card, index) => {
           return <div className="card" key={index}>
             <img src={card.image} alt="" />
