@@ -6,7 +6,7 @@ import cards_data from "../../asset/cards/Cards_data"
 
 
 const TittleCards = () => {
-    const cardsRef = useRef()
+    const cardsRef =  useRef()
 
     const handleWheel = ((event) => {
     event.preventDefault()
