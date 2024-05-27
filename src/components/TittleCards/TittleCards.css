@@ -11,7 +11,7 @@
     overflow-x: scroll;
 }
 .card-list::-webkit-scrollbar{
-    display: none;
+    display: block;
 }
 .card-list img{
     width: 240px;

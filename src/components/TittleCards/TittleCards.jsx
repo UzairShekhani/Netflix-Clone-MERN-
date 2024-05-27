@@ -5,7 +5,7 @@ import cards_data from "../../asset/cards/Cards_data"
 
 
 
-const TittleCards = () => {
+const TittleCards = (title, category) => {
     const cardsRef =  useRef()
 
     const handleWheel = ((event) => {
@@ -13,9 +13,7 @@ const TittleCards = () => {
     cardsRef.current.scrollLeft += event.deltaY
 })
 
-useEffect(()=>{
-  cardsRef.current.addEventListener("wheel", handleWheel)
-},[])
+
   return (
     <div className='titlecards'>
       <h2>Popular On Netflix</h2>
