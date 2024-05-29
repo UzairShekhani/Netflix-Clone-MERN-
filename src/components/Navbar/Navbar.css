@@ -62,6 +62,9 @@
     cursor: pointer;
 }
 .navbar-profile:hover .dropdown{
-    display: block;
-    
+    display: block;   
+}
+.nav-dark{
+    background: #141414;
+    transition: 0.5s;
 }
