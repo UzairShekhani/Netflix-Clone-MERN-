@@ -3,11 +3,13 @@ import {
        createUserWithEmailAndPassword,
        getAuth,
        signInWithEmailAndPassword, 
-       signOut} from "firebase/auth";
+       signOut
+} from "firebase/auth";
 import { 
       addDoc,
       collection,
-      getFirestore } from "firebase/firestore";
+      getFirestore 
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCFZzIE4IFmuWWoci3mGcA1ej06n5wWwnQ",
@@ -19,35 +21,36 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app)
-const db = getFirestore(app)
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-const signup = async (name,email,password) => {
+const signup = async (name, email, password) => {
     try {
-       const res = await createUserWithEmailAndPassword(auth, email, password)
-       const user = res.user
-       await addDoc(collection(db, "user"), {
+        const res = await createUserWithEmailAndPassword(auth, email, password);
+        const user = res.user;
+        await addDoc(collection(db, "user"), {
             uid: user.uid,
             name,
             authProvider: "local",
             email,
-       })
+        });
     } catch (error) {
-        console.log(error);
-        alert(error)
+        console.error(error);
+        alert(error.message);
     }
 }
 
-const login = async (email,password) => {
+const login = async (email, password) => {
     try {
-        signInWithEmailAndPassword(auth, email, password)
+        await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
-        console.log(error);
+        console.error(error);
+        alert(error.message);
     }
 }
 
 const logout = () => {
-    signOut(auth)
+    signOut(auth);
 }
 
-export {auth, db, login, signup, logout}
+export { auth, db, login, signup, logout };
