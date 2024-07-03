@@ -14,7 +14,7 @@ import { logout } from '../../firebase'
 
 const Navbar = () => {
 
-
+ 
   const navref = useRef()
 
   useEffect(() => {
